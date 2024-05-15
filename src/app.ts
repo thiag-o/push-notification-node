@@ -1,6 +1,6 @@
 import webpush from 'web-push';
 import express, { Application } from 'express';
-import { subscription } from './subscriptionTest';
+import { subscriptionChrome, subscriptionEdge } from './subscriptionTest';
 import { PushNotification } from './IPushNotification';
 
 interface UserSubscription {
@@ -32,7 +32,11 @@ const app: Application = express();
 let object: UserSubscription[] = [
   {
     userName: 'Leo',
-    subscription: subscription,
+    subscription: subscriptionChrome,
+  },
+  {
+    userName: 'Leo',
+    subscription: subscriptionEdge,
   },
 ];
 
